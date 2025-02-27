@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Design from './thailwind/Design';
+import Main from './conditionalrendering/Main';
+import Movie from './movie/Movie';
+import Detail from './movie/Detail';
+import Wed from './practice/Wed';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path='/design' element={<Design></Design>}></Route>
+        <Route path='/condition' element={<Main></Main>}></Route>
+        <Route path='/movie' element={<Movie></Movie>}></Route>
+        <Route path='/movies/:id' element={<Detail></Detail>}></Route>
+        <Route path='/wed' element={<Wed></Wed>}></Route>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
